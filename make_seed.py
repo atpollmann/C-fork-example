@@ -24,17 +24,14 @@ type2 = [
     'ECO'
 ]
 
-def addPadding(s, n = 10, c = ' '):
-    return s;
-
 def makeString(n = 10):
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(n))
 
 for i in xrange(0,5000):
     L = [
-        addPadding(random.choice(tipoFondo), 1),
-        addPadding(makeString(20), 50),
-        addPadding(random.choice(type1 + type2), 10),
+        random.choice(tipoFondo),
+        makeString(20),
+        random.choice(type1 + type2),
         str(random.randint(1,2)),
         str(int(random.random()*100) / 100.0),
         str(random.randint(1,346)*386),
