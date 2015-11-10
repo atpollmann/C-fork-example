@@ -11,9 +11,9 @@ FinancialAsset buildFinancialAsset(char *line) {
 
     fa.fundType         = *split[0];
     fa.assetType        = getAssetType(split[2]);
-    fa.amount           = stringToFloat(split[3]);
-    fa.rate             = stringToFloat(split[4]);
-    fa.price            = stringToFloat(split[5]);
+    fa.amount           = stringToDouble(split[3]);
+    fa.rate             = stringToDouble(split[4]);
+    fa.price            = stringToDouble(split[5]);
     fa.daysUntilValid   = stringToInt(split[6]);
 
     free(split);
@@ -32,10 +32,10 @@ char getAssetType(char *id) {
     return 'V';
 }
 
-float getFundValorization(FinancialAsset *fa) {
-    float valorization;
+double getFundValorization(FinancialAsset *fa) {
+    double valorization;
     if(fa->assetType == 'F') {
-        valorization =  (float) (fa->amount / (1.0 + (fa->rate / 360.0) * fa->daysUntilValid / 100));
+        valorization =  (double) (fa->amount / (1.0 + (fa->rate / 360.0) * fa->daysUntilValid / 100));
     } else {
         valorization = fa->amount * fa->price;
     }

@@ -41,14 +41,11 @@ void spawnGrandChilds(GrandChildProcess *gcl, int gcCount, char *dataFilename) {
 
 void processGrandChildsResponses(GrandChildProcess *gcl, ChildProcess *cp, int gcCount) {
     int i, status;
-    float buffer, valorization = 0.0;
+    double buffer, valorization = 0.0;
     for (i = 0; i < gcCount; i++) {
         wait(&status);
-        printf("Valorization before (fund %c, rent %c): %f\n", gcl[i].assetType, gcl[i].fundType, valorization);
         read(gcl[i].pipe[0], &buffer, sizeof(buffer));
-        printf("Received from grandchild (fund %c, rent %c): %f\n", gcl[i].assetType, gcl[i].fundType, buffer);
-        valorization = (float)valorization + (float)buffer;
-        printf("Valorization after (fund %c, rent %c): %f\n", gcl[i].assetType, gcl[i].fundType, valorization);
+        valorization = (double)valorization + (double)buffer;
     }
     write(cp->pipe[1], &valorization, sizeof(valorization));
 }

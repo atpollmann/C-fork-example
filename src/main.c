@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
     char assetTypes[MAX_ASSET_TYPES] = {'F', 'V', 'A'};
     int i;
     int status;
-    float valorization;
+    double valorization;
     char* filename = opt.filename;
     int fc = opt.fundsCount;
     int at = opt.assetType;

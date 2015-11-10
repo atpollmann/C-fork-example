@@ -3,7 +3,7 @@
 typedef struct grandChildProcess {
     char fundType;
     char assetType;
-    float valorization;
+    double valorization;
     pid_t pid;
     int pipe[2];
 }GrandChildProcess;
@@ -26,4 +26,4 @@ void executeGrandChildProcess(GrandChildProcess *grandChildProcess, char *dataFi
  * @param   char    The asset type
  * @returns foat    The funds total valorization
  */
-float parseFile(char fundType, char assetType, char *dataFilename);
+double parseFile(char fundType, char assetType, char *dataFilename);

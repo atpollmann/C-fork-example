@@ -4,14 +4,14 @@
 #include "FinancialAsset.h"
 
 void executeGrandChildProcess(GrandChildProcess *process, char *dataFilename) {	
-    float valorization = parseFile(process->fundType, process->assetType, dataFilename);
+    double valorization = parseFile(process->fundType, process->assetType, dataFilename);
     write(process->pipe[1], &valorization, sizeof(valorization));
 }
 
-float parseFile(char ft, char at, char *dataFilename) {
+double parseFile(char ft, char at, char *dataFilename) {
 
     FinancialAsset fa;
-    float valorization = 0;
+    double valorization = 0;
     FILE *fp;
     char *line = NULL;
     size_t len = 0;

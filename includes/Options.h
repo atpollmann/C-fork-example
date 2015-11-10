@@ -12,4 +12,8 @@ typedef struct options{
  * Returns the user option using getopt
  */
 void getOptions(Options *opt, int argc, char **argv);
+
+/**
+ * Prints the program usage
+ */
 void printUsage(char *binaryName);

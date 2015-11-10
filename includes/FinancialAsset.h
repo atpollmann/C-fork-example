@@ -1,9 +1,9 @@
 typedef struct financialAsset{
     char fundType;
     char assetType;
-    float amount;
-    float rate;
-    float price;
+    double amount;
+    double rate;
+    double price;
     int daysUntilValid;
 }FinancialAsset;
 
@@ -22,7 +22,7 @@ FinancialAsset buildFinancialAsset(char* line);
  *
  * @param FinancialAsset    Pointer to the financialasset structure
  */
-float getFundValorization(FinancialAsset *fa);
+double getFundValorization(FinancialAsset *fa);
 
 /**
  * Given the financialInstrumentTypeId

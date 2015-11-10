@@ -33,8 +33,8 @@ char** splitLine(char* str, const char* delimiter) {
     return result;
 }
 
-float stringToFloat(char *str) {
-    return (float) atof(str);
+double stringToDouble(char *str) {
+    return (double) atof(str);
 }
 int stringToInt(char* str) {
     return atoi(str);
