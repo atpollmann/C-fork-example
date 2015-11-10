@@ -1,0 +1,10 @@
+Compilado con gcc. Programado en MACOSX
+
+Para compilar
+	$ make
+
+Para ejecutar
+	$ ./valorizacion -f data.txt
+
+Para limpiar
+	$ make clean
