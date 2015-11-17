@@ -73,7 +73,7 @@ void getOptions(Options *option, int argc, char **argv) {
 }
 
 void printUsage(char *binaryName) {
-    printf("\nUso: ./%s -f <archivo> [-t <A|B|C|D|E>] [-r <RF|RV>]\n\n", binaryName);
+    printf("\nUso: %s -f <archivo> [-t <A|B|C|D|E>] [-r <RF|RV>]\n\n", binaryName);
     printf("Ejemplos:\n");
     printf("%s -f data.txt\n", binaryName);
     printf("\t- Imprime la valorizacion de todos los fondos\n\n");
